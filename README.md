@@ -1,2 +1,8 @@
 haogu (好古) is dedicated to providing convenient tools that make accessing classical literature on computers easier and more efficient.
 
+# License and Usage Notice
+
+- The code in this repository is released under the MIT License.
+- The data accessed via this code from the National Diet Library Digital Collections are subject to their respective copyrights and usage terms.
+- This tool is intended for research and educational purposes only, and commercial use or bulk data retrieval may violate the NDL's terms of use.
+- Please be sure to review and comply with the National Diet Library's usage policies before using this tool.
