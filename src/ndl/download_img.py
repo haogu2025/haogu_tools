@@ -29,8 +29,8 @@ def download_images_from_canvases(canvases, save_dir):
 
 def main() -> None:
     parser = ArgumentParser()
-    parser.add_argument("pid", default="1912739")
-    parser.add_argument("save_dir", default="downloaded_pages")
+    parser.add_argument("--pid", default="1912739")
+    parser.add_argument("--save_dir", default="downloaded_pages")
     args = parser.parse_args()
     # https://dl.ndl.go.jp/pid/1912739
     canvases = get_canvases(args.pid)
