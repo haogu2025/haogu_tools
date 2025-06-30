@@ -16,7 +16,7 @@ def get_canvases(pid):
 
 
 def download_images_from_canvases(canvases, save_dir):
-    Path(save_dir).makedirs(exist_ok=True)
+    Path(save_dir).mkdir(exist_ok=True, parents=True)
     for i, canvas in enumerate(canvases):
         image_url = canvas["images"][0]["resource"]["@id"]
         print(f"downloading {image_url} ...")
@@ -30,11 +30,12 @@ def download_images_from_canvases(canvases, save_dir):
 def main() -> None:
     parser = ArgumentParser()
     parser.add_argument("--pid", default="1912739")
-    parser.add_argument("--save_dir", default="downloaded_pages")
+    parser.add_argument("--save_dir")
     args = parser.parse_args()
+    save_dir = args.save_dir or f"save_{args.pid}"
     # https://dl.ndl.go.jp/pid/1912739
     canvases = get_canvases(args.pid)
-    download_images_from_canvases(canvases, args.save_dir)
+    download_images_from_canvases(canvases, save_dir)
 
 
 if __name__ == "__main__":
